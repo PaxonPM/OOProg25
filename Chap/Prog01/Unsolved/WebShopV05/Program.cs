@@ -3,11 +3,16 @@ double netPriceBook = 30;
 double netPriceDVD = 50;
 double netPriceGame = 100;
 
-int noOfBooksInOrder = 0;
-int noOfDVDsInOrder = 0;
-int noOfGamesInOrder = 0;
+int noOfBooksInOrder = 23;
+int noOfDVDsInOrder = 16;
+int noOfGamesInOrder = 7;
 
-double totalPrice = 0.0; // This variable should contain the total price for the order
+double netPrice = noOfBooksInOrder * netPriceBook + noOfDVDsInOrder * netPriceDVD + noOfGamesInOrder * netPriceGame;
+double taxAmountOfNet = netPrice * 0.10;
+int shippingCost = 49;
+double cardFee = (netPrice + taxAmountOfNet + shippingCost) * 0.02;
+
+double totalPrice = netPrice + taxAmountOfNet + shippingCost + cardFee; // This variable should contain the total price for the order
 
 
 Console.WriteLine($"You ordered {noOfBooksInOrder} books, " +
