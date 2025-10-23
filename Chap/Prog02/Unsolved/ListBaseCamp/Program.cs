@@ -19,7 +19,7 @@ listOfInt.Add(22);
 listOfInt.RemoveAt(0);
 
 // Case 4
-// Console.WriteLine($"Case 4: Element with index 3 is {listOfInt[3]}");
+ Console.WriteLine($"Case 4: Element with index 3 is {listOfInt[3]}");
 
 
 
@@ -33,19 +33,34 @@ listOfInt.Add(3);
 
 // Case 5: Add code that prints out 
 // all the elements in the list
+foreach (var number in listOfInt)
+{
+    Console.WriteLine(number);
+}
 
 
 
 // Case 6: Add code that finds the 
 // sum of the elements in the list, and prints the result
-
+int sumOfInts = 0;
+foreach (var number in listOfInt)
+{
+    sumOfInts += number;
+}
+Console.WriteLine($"case 6: the sum is: {sumOfInts}");
 
 
 // [DIFFICULT]
 // Case 7: Add code that finds the smallest  
 // element in the list, and prints the result
 // Tip: Think in detail about how you would do this manually
-
+int check = 100;
+foreach (var number in listOfInt)
+{
+    if (number < check)
+    check = number;
+}
+Console.WriteLine($"case 7: the sum is: {check}");
 
 
 // [(maybe) DIFFICULT]

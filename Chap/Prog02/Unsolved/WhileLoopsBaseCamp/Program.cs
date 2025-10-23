@@ -4,7 +4,7 @@ Console.WriteLine("Start of Case 1");
 int c1 = 1;
 while (c1 < 20)
 {
-    // Console.WriteLine(c1); // Uncomment to see result
+    Console.WriteLine(c1); // Uncomment to see result
     c1 = c1 + 2;
 }
 Console.WriteLine("End of Case 1");
@@ -69,5 +69,13 @@ Console.WriteLine("End of Case 7");
 // Case 8 (DIFFICULT)
 // Print out the numbers 10,9,12,7,14,5,16,3,18,1
 Console.WriteLine("Start of Case 8");
-
+int c8 = 10;
+int c88 = 9;
+while (c88 >= 1)
+{
+    Console.WriteLine(c8);  // Uncomment to see result
+    Console.WriteLine(c88);
+    c8 += 2;
+    c88 = c88 - 2;
+}
 Console.WriteLine("End of Case 8");

@@ -6,6 +6,7 @@ public class BankAccount
     {
         get; private set;
     }
+
     #endregion
 
     #region Constructor
@@ -18,12 +19,21 @@ public class BankAccount
     #region Methods
     public void Deposit(double amount)
     {
-        Balance = Balance + amount;
+        if(amount > 0)
+        {
+            Balance = Balance + amount;
+        }    
     }
 
     public void Withdraw(double amount)
     {
-        Balance = Balance - amount;
+        if(amount > 0)
+        {
+            if (Balance >= amount)
+            {
+                Balance = Balance - amount;  
+            }
+        }
     }
     #endregion
 }
