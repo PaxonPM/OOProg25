@@ -1,9 +1,11 @@
 ﻿
-public class ITSupporter
+using EmployeesV10;
+
+public class ITSupporter : Employee
 {
     #region Properties
-    public string Name { get; }
-    public int HoursPerWeek { get; set; }
+    //public string Name { get; }
+    //public int HoursPerWeek { get; set; }
     public string PrimaryWorkArea { get; set; }
 
     public string AllInformation
@@ -16,10 +18,10 @@ public class ITSupporter
     #endregion
 
     #region Constructor
-    public ITSupporter(string name, int hoursPerWeek, string primaryWorkArea)
+    public ITSupporter(string name, int hoursPerWeek, string primaryWorkArea) : base(name, hoursPerWeek)
     {
-        Name = name;
-        HoursPerWeek = hoursPerWeek;
+        //Name = name;
+        //HoursPerWeek = hoursPerWeek;
         PrimaryWorkArea = primaryWorkArea;
     }
     #endregion

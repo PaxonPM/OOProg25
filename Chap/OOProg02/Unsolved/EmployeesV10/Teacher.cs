@@ -1,9 +1,12 @@
 ﻿
-public class Teacher
+using EmployeesV10;
+
+
+public class Teacher : Employee
 {
     #region Properties
-    public string Name { get; }
-    public int HoursPerWeek { get; set; }
+    //public string Name { get; }
+    //public int HoursPerWeek { get; set; }
     public int PayGrade { get; set; }
 
     public string AllInformation
@@ -16,10 +19,8 @@ public class Teacher
     #endregion
 
     #region Constructor
-    public Teacher(string name, int hoursPerWeek, int payGrade)
+    public Teacher(string name, int hoursPerWeek, int payGrade) : base(name, hoursPerWeek)
     {
-        Name = name;
-        HoursPerWeek = hoursPerWeek;
         PayGrade = payGrade;
     }
     #endregion
