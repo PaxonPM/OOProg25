@@ -7,11 +7,30 @@ public class Wand : Weapon
 {
     public const int InitialWandMinDamage = 10;
     public const int InitialWandMaxDamage = 30;
+    public bool IsEnchanted { get; set; }
 
     #region Constructor
     public Wand(string description)
         : base(description, InitialWandMinDamage, InitialWandMaxDamage)
     {
+        IsEnchanted = false;
+        
+    }
+    #endregion
+
+    #region methods
+
+    public int DamageFromWand()
+    {
+        if (IsEnchanted == true)
+        {
+            return 2 * CalculateDamage();
+        }
+        else
+        {
+            return CalculateDamage();
+
+        }
     }
     #endregion
 }
