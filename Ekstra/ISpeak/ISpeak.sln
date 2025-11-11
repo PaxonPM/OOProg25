@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISpeak", "ISpeak.csproj", "{3CBDB91B-D814-4BDC-BFCA-BC09605C327D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CBDB91B-D814-4BDC-BFCA-BC09605C327D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CBDB91B-D814-4BDC-BFCA-BC09605C327D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CBDB91B-D814-4BDC-BFCA-BC09605C327D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CBDB91B-D814-4BDC-BFCA-BC09605C327D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {461A3350-B4D2-42CE-B503-C8AF4A507041}
+	EndGlobalSection
+EndGlobal
