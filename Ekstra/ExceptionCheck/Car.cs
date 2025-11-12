@@ -24,11 +24,11 @@ namespace ExceptionCheck
             {
                 try
                 {
-                    if (_brand == null) throw new ArgumentNullException("No Brand name returned");
-                    if (_brand == "") throw new ArgumentException("Returned an empty string");
+                    if (value == null) throw new ArgumentNullException("No Brand name returned");
+                    if (value == "") throw new ArgumentException("Returned an empty string");
                     _brand = value;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine($"[Error]: {ex.Message}\nStackTrace: {ex.StackTrace}");
                 }
@@ -41,8 +41,10 @@ namespace ExceptionCheck
             {
                 try
                 {
-                    if (_model == null) throw new ArgumentNullException("Returned null for Model");
-                    if (_model.Length > 20) throw new ArgumentOutOfRangeException("Model name is to long");
+                    
+                    if (value == null) throw new ArgumentNullException("Returned null for Model");
+                    if (value.Length > 20) throw new ArgumentOutOfRangeException("Model name is to long");
+                    _model = value;
                 }
                 catch(Exception ex)
                 {
@@ -57,15 +59,16 @@ namespace ExceptionCheck
             {
                 try
                 {
-                    if (_regNo == null) throw new ArgumentNullException("Reg nummer returnerede null");
-                    if (_regNo.Length != 7) throw new ArgumentOutOfRangeException("RegNo is not 7 characters long");
+                    if (value == null) throw new ArgumentNullException("Reg nummer returnerede null");
+                    if (value.Length != 7-1) throw new ArgumentOutOfRangeException("RegNo is not 7 characters long");
 
                     string pattern = @"^[A-Z]{2}[1-9][0-9]{4}$";
 
-                    if (!Regex.IsMatch(_regNo, pattern)) throw new ArgumentException(" Reg number is outside range A-X,A-X,1-9, 0-9, 0-9, 0-9, 0-9 fx ”AB12456”");
+                    if (!Regex.IsMatch(value, pattern)) throw new ArgumentException(" Reg number is outside range A-X,A-X,1-9, 0-9, 0-9, 0-9, 0-9 fx ”AB12456”");
+                    _regNo = value;
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine($"[Error]: {ex.Message}\nStackTrace: {ex.StackTrace}");
                 }
@@ -79,7 +82,15 @@ namespace ExceptionCheck
             get { return _horsePower; }
             set
             {
-                if (_horsePower <= 0) throw new ArgumentOutOfRangeException("Should be bigger than 0");
+                try
+                {
+                    if (value <= 0) throw new ArgumentOutOfRangeException("Should be bigger than 0");
+                    _horsePower = value;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[Error]: {ex.Message} \nStackTrace: {ex.StackTrace}");
+                }
             }
         }
         public int Doors
@@ -87,7 +98,15 @@ namespace ExceptionCheck
             get { return _doors; }
             set
             {
-                if (_doors < 3 || _doors > 5) throw new ArgumentOutOfRangeException("Der skal være minimum 2 og max 5 døre");
+                try
+                {
+                    if (value < 3 || _doors > 5) throw new ArgumentOutOfRangeException("Der skal være minimum 2 og max 5 døre");
+                    _doors = value;
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"[Error]: {ex.Message} \nStackTrace: {ex.StackTrace}");
+                }
             }
         }
     }
